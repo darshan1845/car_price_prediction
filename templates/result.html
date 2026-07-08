@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction Result</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+html,body{height:100%}
+body{
+background:#07111f;
+overflow-y:auto;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding:40px 20px;
+position:relative;
+}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.5;z-index:0;animation:f 12s ease-in-out infinite}
+.blob1{width:340px;height:340px;background:#3b82f6;top:-90px;left:-80px}
+.blob2{width:300px;height:300px;background:#8b5cf6;right:-70px;bottom:-80px;animation-delay:2s}
+.blob3{width:240px;height:240px;background:#06b6d4;left:60%;top:45%;animation-delay:4s}
+@keyframes f{50%{transform:translate(25px,-35px)}}
+
+.card{
+position:relative;
+z-index:1;
+width:min(760px,100%);
+margin:auto;
+background:rgba(15,23,42,.80);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+padding:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+text-align:center;
+animation:show .8s ease;
+}
+@keyframes show{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.logo{
+width:90px;
+height:90px;
+border-radius:50%;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:44px;
+background:linear-gradient(135deg,#3b82f6,#06b6d4);
+box-shadow:0 0 35px rgba(59,130,246,.45);
+}
+
+.badge{
+display:inline-block;
+margin-top:18px;
+padding:8px 18px;
+border-radius:999px;
+background:#1e3a8a55;
+color:#9ddcff;
+font-size:13px;
+}
+
+h1{
+color:#fff;
+margin:22px 0 8px;
+font-size:34px;
+}
+
+.sub{
+color:#a9bdd7;
+margin-bottom:30px;
+}
+
+.price-box{
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+border-radius:18px;
+padding:28px;
+box-shadow:0 15px 40px rgba(6,182,212,.28);
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 15px rgba(6,182,212,.25)}
+to{box-shadow:0 0 35px rgba(6,182,212,.55)}
+}
+
+.price-title{
+color:#eaf7ff;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:56px;
+font-weight:700;
+color:#fff;
+}
+
+.note{
+margin-top:28px;
+line-height:1.7;
+color:#c6d3e3;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 34px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+color:#fff;
+background:linear-gradient(135deg,#3b82f6,#06b6d4);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 18px 35px rgba(6,182,212,.4);
+}
+
+.footer{
+margin-top:28px;
+color:#8ea3bc;
+font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<div class="card">
+
+<div class="logo">🚘</div>
+
+<div class="badge">Prediction Successful</div>
+
+<h1>Estimated Resale Value</h1>
+
+<p class="sub">
+Your vehicle has been evaluated using a Linear Regression Machine Learning model.
+</p>
+
+<div class="price-box">
+<div class="price-title">Predicted Price</div>
+<div class="price">$ {{result}}</div>
+</div>
+
+<p class="note">
+The model has 78.17% accuracy. This prediction is an estimate based on the information you provided. Actual resale value may vary depending on market demand, vehicle condition, location, and inspection.
+</p>
+
+<a href="/" class="btn">🔄 Predict Another Car</a>
+
+<div class="footer">
+• Resale Car Price Predictor
+</div>
+
+</div>
+
+</body>
+</html>
