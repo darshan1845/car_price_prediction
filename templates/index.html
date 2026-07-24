@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resale Car Price Predictor</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+html,body{height:100%}
+body{
+background:#07111f;position:relative;
+overflow-y:auto;overflow-x:hidden;
+padding:20px;
+display:flex;justify-content:center;align-items:flex-start}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.5;z-index:0;animation:f 12s ease-in-out infinite}
+.blob1{width:340px;height:340px;background:#3b82f6;top:-100px;left:-80px}
+.blob2{width:300px;height:300px;background:#8b5cf6;right:-80px;bottom:-80px;animation-delay:2s}
+.blob3{width:240px;height:240px;background:#06b6d4;left:60%;top:40%;animation-delay:4s}
+@keyframes f{50%{transform:translate(20px,-30px)}}
+.card{
+position:relative;z-index:1;width:min(1180px,100%);
+margin:auto;background:rgba(15,23,42,.8);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;padding:22px 34px;
+box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.badge{display:table;margin:0 auto 10px;padding:7px 16px;border-radius:999px;background:#1e3a8a55;color:#9ddcff;font-size:13px}
+h1{text-align:center;color:#fff;font-size:30px}
+.sub{text-align:center;color:#9fb3cf;margin:8px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 24px}
+.group{display:flex;flex-direction:column}
+label{color:#dbeafe;font-size:14px;font-weight:600;margin-bottom:6px}
+input,select{padding:11px 13px;border:none;border-radius:12px;background:rgba(255,255,255,.07);color:#fff;outline:none;transition:.25s}
+select option{color:#000}
+input::placeholder{color:#9fb3cf}
+input:hover,select:hover{background:rgba(255,255,255,.11)}
+input:focus,select:focus{box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+.submit{text-align:center;margin-top:20px}
+input[type=submit]{width:260px;background:linear-gradient(135deg,#3b82f6,#06b6d4);cursor:pointer;font-weight:700}
+input[type=submit]:hover{transform:translateY(-3px)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}input[type=submit]{width:100%}}
+</style>
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+<div class="card">
+<div class="badge">Machine Learning Powered</div>
+<h1>Resale Car Price Predictor</h1>
+<div class="sub">Predict your car's resale value instantly</div>
+<form action="" method="POST">
+<div class="grid">
+<div class="group">
+    <label>Enter Car's year of manufacturing</label>
+    <input type="number" placeholder="Enter year only" name="inp1">
+</div>
+<div class="group">
+    <label>Enter Mileage of car</label>
+    <input type="number" name="inp2">
+</div>
+<div class="group">
+    <label>Enter CC of engine</label>
+    <input type="number" name="inp3">
+</div>
+<div class="group">
+    <label>Select Fuel Type</label>
+    <select name="inp4">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">Petrol</option>
+        <option value="1">Diesel</option>
+        <option value="2">Electric</option>
+    </select>
+</div>
+<div class="group">
+    <label>Enter number of previous owners</label>
+    <input type="number" name="inp5">
+</div>
+<div class="group">
+    <label>Select the car brand</label>
+    <select name="inp6">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">BMW</option>
+        <option value="1">Chevrolet</option>
+        <option value="2">Ford</option>
+        <option value="3">Honda</option>
+        <option value="4">Hyundai</option>
+        <option value="5">Kia</option>
+        <option value="6">Nissan</option>
+        <option value="7">Tesla</option>
+        <option value="8">Toyota</option>
+        <option value="9">Volkswagen</option>
+    </select>
+</div>
+<div class="group">
+    <label>Select Transmission Type</label>
+    <select name="inp7">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">Automatic</option>
+        <option value="1">Manual</option>
+    </select>
+</div>
+<div class="group">
+    <label>Select Colour of car</label>
+    <select name="inp8">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">Black</option>
+        <option value="1">Blue</option>
+        <option value="2">Gray</option>
+        <option value="3">Red</option>
+        <option value="4">Silver</option>
+        <option value="5">White</option>
+    </select>
+</div>
+<div class="group">
+    <label>Select Service History</label>
+    <select name="inp9">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">Full</option>
+        <option value="1">No_History</option>
+        <option value="2">Partial</option>
+    </select>
+</div>
+<div class="group">
+    <label>Enter number of accidents reported</label>
+    <input type="number" name="inp10">
+</div>
+<div class="group">
+    <label>Is insurance valid?</label>
+    <select name="inp11">
+        <option value="" selected disabled hidden>Select option</option>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+    </select>
+</div>
+</div>
+<div class="submit">
+    <input type="submit" value="Predict Price">
+</div>
+</form>
+</div>
+</body>
+</html>
